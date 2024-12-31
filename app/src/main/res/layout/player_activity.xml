@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playerActivityRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_player_activity">
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/minimize"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/right_arrow"
+        android:scaleType="centerInside"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="@id/playerGuideStart"
+        app:layout_constraintTop_toTopOf="parent"
+        android:rotation="90"
+        android:padding="12dp"
+        android:contentDescription="Minimize"
+        />
+
+    <TextView
+        android:id="@+id/nowPlaying"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Now Playing..."
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/timer"
+        app:layout_constraintEnd_toStartOf="@id/timer"
+        app:layout_constraintStart_toEndOf="@id/minimize"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/timer"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/timer"
+        android:scaleType="centerInside"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toEndOf="@id/nowPlaying"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/playerGuideEnd"
+        android:padding="12dp"
+        android:contentDescription="Sleep Timer"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:backgroundTint="#94B11F1F"
+        android:id="@+id/playerAlbum"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="20dp"
+        app:contentPadding="10dp"
+        app:cardElevation="15dp"
+        app:layout_constraintTop_toBottomOf="@id/nowPlaying"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dn_circle"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/playerSongName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:freezesText="true"
+        android:scrollHorizontally="true"
+        android:text="Song Name"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/progressBar"
+        app:layout_constraintEnd_toStartOf="@id/playerLikeButton"
+        app:layout_constraintStart_toStartOf="@+id/playerAlbum"
+        app:layout_constraintTop_toBottomOf="@id/playerAlbum" />
+
+    <TextView
+        android:id="@+id/artistName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Artist Name"
+        android:textColor="#B4B4B4"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/playerLikeButton"
+        app:layout_constraintStart_toStartOf="@+id/playerSongName"
+        app:layout_constraintTop_toBottomOf="@id/playerSongName" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/playerLikeButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/like"
+
+        app:layout_constraintEnd_toEndOf="@+id/playerAlbum"
+        app:layout_constraintStart_toEndOf="@+id/playerSongName"
+        app:layout_constraintTop_toTopOf="@+id/playerSongName" />
+
+    <SeekBar
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:paddingTop="13dp"
+        android:layout_marginStart="10dp"
+        android:paddingBottom="13dp"
+        android:progressDrawable="@drawable/propress_bar"
+        android:thumb="@drawable/thumb"
+        app:layout_constraintBottom_toTopOf="@+id/playPause"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playerAlbum" />
+
+    <TextView
+        android:id="@+id/playedDuration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="3:33"
+        android:textColor="#ADADAD"
+        android:layout_marginStart="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/totalDuration"
+        app:layout_constraintStart_toStartOf="@+id/playerGuideStart"
+        app:layout_constraintTop_toBottomOf="@id/progressBar" />
+
+    <TextView
+        android:id="@+id/totalDuration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="5:55"
+        android:textColor="#ADADAD"
+        android:gravity="end"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/playerGuideEnd"
+app:layout_constraintStart_toEndOf="@id/playedDuration"
+        app:layout_constraintTop_toBottomOf="@id/progressBar" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/shuffle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Shuffle"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/shuffle"
+        app:layout_constraintBottom_toBottomOf="@+id/previous"
+        app:layout_constraintEnd_toStartOf="@id/previous"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/previous"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Shuffle"
+
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/previous"
+        app:layout_constraintBottom_toBottomOf="@+id/playPause"
+        app:layout_constraintEnd_toStartOf="@id/playPause"
+        app:layout_constraintStart_toEndOf="@id/shuffle"
+        app:layout_constraintTop_toTopOf="@+id/playPause" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/playPause"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="70dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Shuffle"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/pause"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/next"
+        app:layout_constraintStart_toEndOf="@id/previous" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/next"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Next"
+        android:padding="12dp"
+        android:rotation="180"
+        android:scaleType="centerInside"
+        android:src="@drawable/previous"
+        app:layout_constraintBottom_toBottomOf="@+id/playPause"
+        app:layout_constraintEnd_toStartOf="@id/repeat"
+        app:layout_constraintStart_toEndOf="@id/playPause"
+        app:layout_constraintTop_toTopOf="@+id/playPause" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/repeat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Next"
+        android:padding="12dp"
+        android:rotation="180"
+        android:scaleType="centerInside"
+        android:src="@drawable/repeat"
+        app:layout_constraintBottom_toBottomOf="@+id/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/next"
+        app:layout_constraintTop_toTopOf="@+id/next" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/playerGuideStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/playerGuideEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/playerGuideTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="10dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

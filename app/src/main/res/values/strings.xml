@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">DN Player</string>
+    <!--Navigation Bar -->
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="settings">Settings</string>
+
+    <string name="play">Play button</string>
+    <string name="search">What do you want to listen to?</string>
+    <string name="allSong">All Songs</string>
+    <string name="developer">Developed by Namita &amp; Dinesh</string>
+    <string name="privacy_policy_title">Privacy Policy</string>
+    <string name="effective_date">Effective Date: 2025 Jan 1 </string>
+
+    <string name="introduction">This privacy policy explains how DN Player app collects, stores, and uses your data. The app is for personal use only and follows privacy standards.</string>
+
+    <string name="data_we_collect_title">1. What Data We Collect</string>
+    <string name="data_we_collect_intro">We collect the following data to make your experience better:</string>
+    <string name="local_music_files">• Music Files: We access your local music to play songs.</string>
+    <string name="playback_data">• Playback Data: We track which songs you listen to often to give better song recommendations.</string>
+    <string name="user_preferences">• User Preferences: This includes things like your liked songs and shuffle settings.</string>
+
+    <string name="data_storage_title">2. Where Your Data Is Stored</string>
+    <string name="data_storage_details">All data collected by the DN Player app is stored on your device. We do not upload your data to any servers or share it with anyone.</string>
+
+    <string name="permissions_title">3. Permissions</string>
+    <string name="storage_permission_details">The app needs access to your device\'s storage to get and play your music files.</string>
+
+    <string name="target_audience_title">4. Who Can Use This App</string>
+    <string name="target_audience_details">The DN Player app is for users aged 6 and older.</string>
+
+    <string name="changes_title">5. Updates to This Privacy Policy</string>
+    <string name="changes_details">If this privacy policy changes, we will let you know through the app’s settings page.</string>
+
+    <string name="contact_title">6. How to Contact Us</string>
+    <string name="contact_details">If you have any questions, you can email us at dteachtiv@gmail.com.</string>
+
+
+
+</resources>

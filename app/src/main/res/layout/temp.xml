@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_setting"
+    >
+
+    <TextView
+
+        android:id="@+id/settings_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Settings"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/settingStartGuide"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+
+
+        />
+
+    <FrameLayout
+        android:id="@+id/themeFrame"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@id/settingsEndGuide"
+        app:layout_constraintStart_toStartOf="@id/settingStartGuide"
+        app:layout_constraintTop_toBottomOf="@id/settings_text"
+        android:padding="15dp"
+        android:background="@drawable/song_list_background"
+        android:elevation="20dp"
+
+
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="App Theme"
+            android:textSize="20sp"
+            android:gravity="start"
+            android:textColor="@color/white"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+
+            >
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="40dp"
+                android:layout_gravity="start|bottom"
+                android:background="@drawable/theme_background"
+                android:layout_height="40dp"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/theme_background" />
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/theme_background" />
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/theme_background" />
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/theme_background" />
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/theme_background" />
+        </LinearLayout>
+
+
+    </FrameLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/notificatonFrame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@id/settingsEndGuide"
+        app:layout_constraintStart_toStartOf="@id/settingStartGuide"
+        app:layout_constraintTop_toBottomOf="@id/themeFrame"
+
+        app:cardBackgroundColor="@color/nav_item_background"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/notification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/songOfTheDay"
+                android:layout_width="0dp"
+                android:layout_height="27dp"
+                android:text="Song of the day"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/songOfTheDayS"
+                app:layout_constraintTop_toBottomOf="@id/notification"
+                android:textColor="@color/white"/>
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/songOfTheDayS"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                app:layout_constraintStart_toEndOf="@id/songOfTheDay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/songOfTheDay"
+                />
+            <TextView
+                android:id="@+id/sleepRemainder"
+                android:layout_width="0dp"
+                android:layout_height="27dp"
+                android:text="Sleep Remainder"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/sleepRemainderS"
+                app:layout_constraintTop_toBottomOf="@id/songOfTheDay"
+                android:textColor="@color/white"/>
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/sleepRemainderS"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                app:layout_constraintStart_toEndOf="@id/sleepRemainder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/sleepRemainder"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/settingStartGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/settingsEndGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
